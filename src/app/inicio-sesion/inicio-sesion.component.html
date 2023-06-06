@@ -1,0 +1,76 @@
+<style>
+  form {
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    background-color: #f2f2f2;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  span {
+    display: block;
+    margin-bottom: 20px;
+  }
+  
+  label {
+    margin-bottom: 5px;
+  }
+  
+  input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  </style>
+<div class="container">
+<form [formGroup]="formLogin">
+  <div>
+    <span>
+      <label htmlFor="email">Email:</label>
+      <input
+        id="email"
+        formControlName="email"
+      />
+      
+    </span>
+  </div>
+  <span>
+    <label htmlFor="contrasena">Contraseña:</label>
+    <input
+      formControlName="contrasena"
+      id="contrasena"
+    />
+    
+  </span>
+  <div>
+    <button
+      label="Enviar"
+      (click)="inicioSesion()"
+    >Iniciar Sesion</button>
+    <div>¿No tienes cuenta? <a routerLink="/registro">Crear</a> </div>
+
+  </div>
+</form>
+</div>
